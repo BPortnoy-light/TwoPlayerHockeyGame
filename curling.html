@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>COMP 2406 - Multiplayer Curling</title>
+    <style>
+      body {
+        background: #dddddd;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .canvas-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      canvas {
+        background: #ffffff;
+        border: 1px solid black;
+      }
+
+      .scoreboard {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .score {
+        margin: 0 40px;
+      }
+
+      #status {
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 10px;
+      }
+
+      #controls {
+        margin: 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scoreboard">
+      <div id="homeScore" class="score" style="color: red">0</div>
+      <div id="visitorScore" class="score" style="color: gold">0</div>
+    </div>
+
+    <div class="canvas-container">
+      <canvas id="closeupCanvas" width="200" height="400">Canvas not supported</canvas>
+      <canvas id="gameCanvas" width="800" height="600">Canvas not supported</canvas>
+    </div>
+
+
+    <div id="controls">
+      <button id="JoinAsHomeButton" style="background-color: lightcoral">Join as HOME</button>
+      <button id="JoinAsVisitorButton" style="background-color: lightyellow">Join as VISITOR</button>
+      <button id="JoinAsSpectatorButton" style="background-color: lightgreen">Join as Spectator</button>
+    </div>
+
+    <div id="status">Waiting for players...</div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="curlingclient.js"></script>
+  </body>
+</html>
